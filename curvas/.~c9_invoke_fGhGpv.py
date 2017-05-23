@@ -1,9 +1,6 @@
 from django.shortcuts import render,HttpResponse
 from django.core.urlresolvers import reverse,reverse_lazy
 from django.views.generic import CreateView, TemplateView
-from django.http import JsonResponse
-from scipy import integrate
-import numpy as np
 import matplotlib
 matplotlib.use('Agg')
 
@@ -19,53 +16,70 @@ class theory(TemplateView):
     template_name = 'theory.html'
 class tool(TemplateView):
     template_name ='tool.html'
-class particles(TemplateView):
-    template_name = 'particles.html'
 
-def graphic(request, fun, iterations, lowerbound, upperbound):
+
+def graphic(request, funcion, iteraciones, lower_bound, upper_bound):
     
     import matplotlib.pyplot as plt, mpld3
     import matplotlib.figure as fg
     import matplotlib
+    import numpy as np
     import mpld3
     from mpld3 import plugins, utils
     from matplotlib.patches import Polygon
     
-    # Ver atributos de un objeto
-    # from pprint import pprint
-    # pprint(vars(fig))
+    from pprint import pprint
     
-    #limite inferior
-    a=float(lowerbound)
-    #limite superior
-    b=float(upperbound)
     
     fig, ax = plt.subplots(figsize=(11,6.5))
-    x = np.linspace(a, b, 1000)
+    # pprint(vars(fig))
+    # print ('#########################################3')
+    x = np.linspace(-10, 10, 1000)
     #fig.subplots_adjust(right=2,top=1.1)
-    
+    #fig.adjustable='box'
+    #fig.figsize=(5,2)
+    # print(type(fig))
+    # fig.fg.Figure()
+    # Ver atributos de un objeto
+    # pprint(vars(fig))
+    # ax.legend_ = 'Raffo'
+    # fig.figurePatch.set_width(3)
+    # fig.figurePatch.set_height(3)
+    # fig._animated=True
+    # print(fig._animated)
     #paso de la funcion a graficar
-    y=eval(fun)
+    y='x**3
     #iteraciones
-    n=int(iterations)
+    n=0
+    #limite inferior
+    a=-10.0
+    #limite superior
+    b=10.0
     
-    
+    #fig.Figure(figsize=1000)
 
+    """rect=[1,1,1,1]
+    fig.add_axes(rect)
+    fig.add_axes(rect, frameon=False, facecolor='g')
+    fig.add_axes(rect, polar=True)
+    fig.add_axes(rect, projection='polar')
+    fig.add_axes(ax)"""
     # Propiedades de la linea que es definida por la funcion
     ax.plot(x,y, lw=5, alpha=0.7)
     # Add grid to figure
     ax.grid(True, alpha=0.3)
     
+    #ax.set_ylim(-1.2, 1.0)
+    #ax.text(5, -1.1, "Here are some curves", size=18)
     
     # Dibujar area bajo la curva
     ix = np.linspace(a, b)
     iy = ix
     verts = [(a, 0)] + list(zip(x, y)) + [(b, 0)]
-    poly = Polygon(verts, facecolor='0.8', edgecolor='0.5')
+    poly = Polygon(verts, facecolor='0.9', edgecolor='0.5')
     ax.add_patch(poly)
+
     
-    #muestra la posicion del puntero en la grafica
-    plugins.connect(fig, plugins.MousePosition(fontsize=14))
 
 
     # For transform it to HTML
@@ -138,51 +152,3 @@ def romberg(f, a, b, eps = 1E-8):
             #print(R)
             return R[n][n]
         n += 1
-        
-def calcular(request, fun, iterations, lowerbound, upperbound):
-    
-    a=float(lowerbound)
-    b=float(upperbound)
-    g = eval("lambda x:"+fun)
-    n=int(iterations)
-    
-    #calculo del valor real con la libreria Scypy
-    valorReal=integrate.quad(g, a, b)
-    valorReal= valorReal[0]
-    
-    #calculo con cada uno de los metodos
-    valorTrap= trapecio(n,a,b,g)
-    valorSimp= simpson(n,a,b,g)
-    valorRomb= romberg(g, a, b, eps = 1E-8)
-    
-    #calculo de los errores con el valor absoluto
-    errorAbT= abs(valorReal-valorTrap)
-    errorReT= errorAbT/valorReal*100
-    errorAbS= abs(valorReal-valorSimp)
-    errorReS= errorAbS/valorReal*100
-    errorAbR= abs(valorReal-valorRomb)
-    errorReR= errorAbR/valorReal*100
-    
-    # do something with the your data
-    data = [
-        {"valorReal":valorReal
-        },
-        {"valor":valorTrap,
-         "errorAb":errorAbT,
-         "errorRe":errorReT
-        },
-        {"valor":valorSimp,
-         "errorAb":errorAbS,
-         "errorRe":errorReS
-        },
-        {"valor":valorRomb,
-         "errorAb":errorAbR,
-         "errorRe":errorReR
-        }
-        ]
-    
-    
-    
-    
-    # just return a JsonResponse
-    return JsonResponse(data, safe=False)

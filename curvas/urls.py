@@ -16,13 +16,19 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
-from .views import index,graphic,herramienta
+from .views import index,graphic,herramienta,help,theory,tool,particles,calcular
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', index.as_view(), name = "index"),
     url(r'^index$', index.as_view(), name = "index"),
-    url(r'^prueba$', herramienta.as_view(), name = "prueba"),
-    url(r'^grafica$', graphic, name = "grafica"),
+    url(r'^herramienta$', herramienta.as_view(), name = "herramienta"),
+    url(r'^grafica/(?P<fun>\S+)/(?P<iterations>\S+)/(?P<lowerbound>\S+)/(?P<upperbound>\S+)$', graphic, name = "grafica"),
+    url(r'^calcular/(?P<fun>\S+)/(?P<iterations>\S+)/(?P<lowerbound>\S+)/(?P<upperbound>\S+)$', calcular, name = "calcular"),
+    url(r'^ayuda$', help.as_view(), name = "ayuda"),
+    url(r'^teoria$', theory.as_view(), name = "teoria"),
+    url(r'^particle', particles.as_view(), name = "particle"),
+    
+    
 ]
 #HELADO
