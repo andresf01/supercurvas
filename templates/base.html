@@ -8,7 +8,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
-<title>Fuel Serve an Industrial Category Flat bootstrap Responsive Website Template | Home :: w3layouts</title>
+
+<title>Super Curvas {% block subtitle %}{% endblock subtitle %}</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content="Fuel Serve Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
@@ -21,8 +22,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <link href="{% static 'css/font-awesome.css' %}" rel="stylesheet"> 			<!-- font-awesome icons -->
 <!-- //Custom Theme files -->
 <!-- fonts -->
-<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
-<link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,300italic,700' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,300italic,700' rel='stylesheet' type='text/css'>
 <!-- //fonts -->
 <!-- js -->
 <script src="{% static 'js/jquery-1.11.1.min.js' %}"> </script>	
@@ -51,7 +52,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		<div class="container">
 			<div class="header-bottom">
 				<div class="w3ls-logo">
-					<h1><a href="index.html">Fuel <span>Serve</span></a></h1>
+					<h1><a href="./index">Super <span>curvas</span></a></h1>
 				</div>
 				
 				<div class="clearfix"> </div>
@@ -65,12 +66,14 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<!-- Collect the nav links, forms, and other content for toggling -->
 					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 						<ul class="nav navbar-nav">
-							<li class="home-icon"><a href="index.html"><span class="glyphicon glyphicon-home" aria-hidden="true"></span></a></li>
-							<li><a href="index.html" class="active">Home</a></li>
-							<li><a href="about.html">About</a></li>
-							<li><a href="#news" class="scroll">News</a></li>
-							<li><a href="gallery.html">Gallery</a></li>	 
-							<li><a href="contact.html">Contact</a></li>
+							<li class="home-icon"><a href="index"><span class="glyphicon glyphicon-home" aria-hidden="true"></span></a></li>
+							{% block activemenu %}
+							<li><a href="./index" class="active">Inicio</a></li>
+							<li><a href="./teoria">Teoría</a></li>
+							<li><a href="./herramienta">Herramienta</a></li>
+							<li><a href="./ayuda">Ayuda</a></li>	 
+							{% endblock activemenu %}
+							<!--<li><a href="contact.html">Contact</a></li>-->
 						</ul>	
 						<div class="clearfix"> </div>
 					</div>	
@@ -96,10 +99,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				
 				<div class="col-md-12 text-center"> 
 					
-					<div class="f-address">
-						<p class="text">Eiusmod Tempor inc ,St Dolore Place,Kingsport 56777</p>
-						<p class="number">+1 234 567 8901</p>
-					</div>
+					<!--<div class="f-address">-->
+					<!--	<p class="text">Eiusmod Tempor inc ,St Dolore Place,Kingsport 56777</p>-->
+					<!--	<p class="number">+1 234 567 8901</p>-->
+					<!--</div>-->
 					<div class="copyright">
 						<p>© 2017 Fuel Serve .  All rights reserved | Design by <a href="http://w3layouts.com/">W3layouts</a></p>
 					</div>

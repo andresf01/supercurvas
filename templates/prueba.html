@@ -1,138 +1,125 @@
-{% extends "base.html" %}
-{% load static %}
-
-	{% block maincontent %}
-	<div class="about">
-		<div class="aboutw3-agileinfo">
-			<!-- container -->
-			<div class="container">
-				<h2 class="agileits-title">About us</h2>
-			</div>
-			<!-- //container -->
+{% extends "base.html" %} {% load static %}{% block subtitle %}- Herramienta{% endblock subtitle %}
+{% block activemenu %}
+		<li><a href="./index">Inicio</a></li>
+		<li><a href="./teoria">Teoría</a></li>
+		<li><a href="./herramienta" class="active">Herramienta</a></li>
+		<li><a href="./ayuda">Ayuda</a></li>	 
+	{% endblock activemenu %}
+{% block maincontent %}
+<div class="about">
+	<div class="aboutw3-agileinfo">
+		<!-- container -->
+		<div class="container">
+			<h2 class="agileits-title">Curvas</h2>
 		</div>
-		<!-- about-bottom -->
-		<div class="about-bottom">
-			<!-- container -->
-			<div class="container">
-				<div class="about-agileinfo">
-					<div class="col-md-10 about-w3grid">
-						<div id="topBar"> <a href ="#" onclick="load_home()"> grafica </a> </div>
-						<div id="grafica" style="margin: 0 auto;" ></div>
-					</div>
-					
-					<div class="clearfix"> </div>
-				</div>
-			</div>
-			<!-- container -->
-		</div>
-		<!-- about-bottom -->
-		<!-- about-team -->
-		<div class="about-team agileits-w3layouts">
-			<!-- container-wrap -->
-			<div class="container">
-				<h3>Our Team</h3>
-				<div class="team-wthreegrids">
-					<div class="col-md-3 team-grid">
-						<img src="images/t1.jpg" alt="">
-						<h6>convallis id mauris</h6>
-						<div class="team-w3icons w3-agileitsicons"> 
-							<ul>
-								<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-								<li><a class="twt" href="#"><i class="fa fa-twitter" aria-hidden="true"></i> </a></li>
-								<li><a class="drbl" href="#"><i class="fa fa-linkedin" aria-hidden="true"></i> </a></li>
-							</ul>  
-						</div>
-						<p> Curabitur orci massa convallis id mauris sed venenatis porttitor at leo nec purus</p>
-					</div>
-					<div class="col-md-3 team-grid">
-						<img src="images/t2.jpg" alt="">
-						<h6>massa convallis</h6>
-						<div class="team-w3icons w3-agileitsicons"> 
-							<ul>
-								<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-								<li><a class="twt" href="#"><i class="fa fa-twitter" aria-hidden="true"></i> </a></li>
-								<li><a class="drbl" href="#"><i class="fa fa-linkedin" aria-hidden="true"></i> </a></li>
-							</ul>  
-						</div>
-						<p> Curabitur orci massa convallis id mauris sed venenatis porttitor at leo nec purus</p>
-					</div>
-					<div class="col-md-3 team-grid">
-						<img src="images/t3.jpg" alt="">
-						<h6>leonec purus</h6>
-						<div class="team-w3icons w3-agileitsicons"> 
-							<ul>
-								<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-								<li><a class="twt" href="#"><i class="fa fa-twitter" aria-hidden="true"></i> </a></li>
-								<li><a class="drbl" href="#"><i class="fa fa-linkedin" aria-hidden="true"></i> </a></li>
-							</ul>  
-						</div>
-						<p> Curabitur orci massa convallis id mauris sed venenatis porttitor at leo nec purus</p>
-					</div>
-					<div class="col-md-3 team-grid">
-						<img src="images/t4.jpg" alt="">
-						<h6>venenatis portt</h6>
-						<div class="team-w3icons w3-agileitsicons"> 
-							<ul>
-								<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-								<li><a class="twt" href="#"><i class="fa fa-twitter" aria-hidden="true"></i> </a></li>
-								<li><a class="drbl" href="#"><i class="fa fa-linkedin" aria-hidden="true"></i> </a></li>
-							</ul>  
-						</div>
-						<p> Curabitur orci massa convallis id mauris sed venenatis porttitor at leo nec purus</p>
-					</div>
-					<div class="clearfix"> </div>
-				</div>
-			</div>
-			<!-- //container -->
-		</div>
-		<!-- //about-team -->
-		<!-- choose -->
-		<div class="choose">
-			<!-- container -->
-			<div class="container">
-				<h3>Why choose us</h3>
-				<div class="choose-w3layoutsinfo">
-					<div class="col-md-4 choose-grid">
-						<h5>Donec cursus felis a enim egestas, vitae porttitor elit condimentum.</h5>
-						<p>Etiam ex lorem, cursus vitae placerat a, suscipit dapibus tortor. Sed nec augue enim. Cras rhoncus ultricies eros, interdum aliquam eros iaculis id.</p>
-						<div class="choose-button">
-							<a href="single.html">More</a>
-						</div>
-					</div>
-					<div class="col-md-4 choose-grid">
-						<h5>Donec cursus felis a enim egestas, vitae porttitor elit condimentum.</h5>
-						<p>Etiam ex lorem, cursus vitae placerat a, suscipit dapibus tortor. Sed nec augue enim. Cras rhoncus ultricies eros, interdum aliquam eros iaculis id.</p>
-						<div class="choose-button">
-							<a href="single.html">More</a>
-						</div>
-					</div>
-					<div class="col-md-4 choose-grid">
-						<h5>Donec cursus felis a enim egestas, vitae porttitor elit condimentum.</h5>
-						<p>Etiam ex lorem, cursus vitae placerat a, suscipit dapibus tortor. Sed nec augue enim. Cras rhoncus ultricies eros, interdum aliquam eros iaculis id.</p>
-						<div class="choose-button w3ls-btn">
-							<a href="single.html">More</a>
-						</div>
-					</div>
-					<div class="clearfix"> </div>
-				</div>
-			</div>
-			<!-- //container -->
-		</div>
-		<!-- //choose -->
+		<!-- //container -->
 	</div>
-	{% endblock maincontent %}
-	
-	
-	{% block bottomtext %}
+	<!-- about-bottom -->
+	<div class="about-bottom">
+		<!-- container -->
+		<div class="container">
+			<div id="forms" class="grid_3 grid_4">
+			<h3 class="w3ls-hdg">Datos para la funcion</h3>
+			<div class="">
+				
+				<form class="form-horizontal" action="" method="post">
+					<div class="form-group">
+						<label for="funcion" class="col-sm-2 control-label label-input-sm">Funcion:</label>
+						<h3 class="col-sm-1 control-label">&#x222b;</h3>
+						<div class="col-sm-9">
+							<input type="text" class="form-control1 input-sm" id="funcion" placeholder="Ejemplo: x+1">
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="iterations" class="col-sm-2 control-label label-input-sm">No. iteraciones:</label>
+						<div class="col-sm-2">
+							<input type="text" class="form-control1 input-sm" id="iterations" placeholder="Enteros positivos">
+						</div>
+						<label for="lowerbound" class="col-sm-2 control-label label-input-sm">Limite inferior:</label>
+						<div class="col-sm-2">
+							<input type="text" class="form-control1 input-sm" id="lowerbound" placeholder="Valor de inicio">
+						</div>
+						<label for="upperbound" class="col-sm-2 control-label label-input-sm">Limite superior:</label>
+						<div class="col-sm-2">
+							<input type="text" class="form-control1 input-sm" id="upperbound" placeholder="Valor final">
+						</div>
+					</div>
+					<!--<a href="" class="col-sm-2 col-sm-offset-5 btn btn1 btn-1 btn-1b w3-agile centered">Calcular</a>-->
+					<!--<button class="col-sm-2 col-sm-offset-5 btn1 btn-1 btn-1b w3-agile centered">Calcular</button>-->
+				</form>
+			</div>
+		</div>
+			<div class="choose-w3layoutsinfo">
+				<div class="col-md-12 choose-grid">
+					<div class="choose-button col-md-3 col-sm-4" id="topBar"><a class="agile-icon" href="#" id="btn-graph"><i class="fa fa-bar-chart-o"></i>Graficar</a></div>
+					<!--<div id="topBar"> <a href='#' class="choose-button" id="btn-graph" ><i class="fa fa-bar-chart-o"></i> grafica </a> </div>-->
+					<div class="col-sm-12" id="grafica" style="margin: 0 auto;">
+						<object id='target' type="text/html"></object>
+					</div>
+				</div>
+				<div id="error"> </div>
+				<div class="clearfix"> </div>
+			</div>
+			<br>
+			
+			<div id="forms" class="grid_3 grid_4">
+			<h3 class="w3ls-hdg">Resultado de la funcion</h3>
+			
+			<div class="col-sm-4 col-sm-offset-4 text-center">
+				<strong>Resultado Valor Real</strong>
+				<br />
+				<span class="badge badge-primary " id="valorReal">1</span>
+				<p></p>
+			</div>
+			<br><br>
+			<table class="table table-bordered">
+						<thead>
+							<tr>
+								<th></th>
+								<th>Metodo del Trapecio</th>
+								<th>Metodo de Simpson</th>
+								<th>Metodo de Romberg</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td><strong>Resultado</strong></td>
+								<td><span id='tResult' class="badge badge-primary">1</span></td>
+								<td><span id='sResult' class="badge badge-primary">2</span></td>
+								<td><span id='rResult' class="badge badge-primary">3</span></td>
+							</tr>
+							<tr>
+								<td><strong>Error Relativo</strong></td>
+								<td><span id='tRelError' class="badge badge-primary">1</span></td>
+								<td><span id='sRelError' class="badge badge-primary">1</span></td>
+								<td><span id='rRelError' class="badge badge-primary">1</span></td>
+							</tr>
+							<tr>
+								<td><strong>Error Absoluto</strong></td>
+								<td><span id='tAbsError' class="badge badge-primary">1</span></td>
+								<td><span id='sAbsError' class="badge badge-primary">1</span></td>
+								<td><span id='rAbsError' class="badge badge-primary">1</span></td>
+							</tr>
+						</tbody>
+					</table>
+		</div>
+		</div>
 
-	{% endblock bottomtext %}
-	
-	
-	{% block plugins %}
-	<script>
-	// document.getElementById("grafica").innerHTML='<object type="text/html" data="grafica" width=100% height=550px></object>';
-        function load_home() {
-    	document.getElementById("grafica").innerHTML='<object type="text/html" data="grafica" width=100% height=550px></object>';
-		}     
-    </script>
-	{% endblock plugins %}
+		
+		<!-- container -->
+	</div>
+	<!-- about-bottom -->
+	<!-- about-team -->
+	<div class="about-team agileits-w3layouts">
+		<!-- container-wrap -->
+		<!-- //container -->
+	</div>
+	<!-- //about-team -->
+	<!-- choose -->
+
+	<!-- //choose -->
+</div>
+{% endblock maincontent %} {% block bottomtext %} {% endblock bottomtext %} {% block plugins %}
+
+<script type="text/javascript" src="{% static 'js/updateGraph.js' %}"></script>
+{% endblock plugins %}

@@ -2,10 +2,11 @@
 {% load static %}
 
 	{% block maincontent %}
-	<!-- banner -->
+
 	<div class="banner">
 		<!-- container -->
 		<div class="container">
+		<br>
 			<div class="banner-agileinfo">
 				<script src="{% static 'js/responsiveslides.min.js' %}"></script>
 				<script>
@@ -13,7 +14,7 @@
 					$(function () {
 					// Slideshow 4
 						$("#slider3").responsiveSlides({
-							auto: true,
+							auto: false,
 							pager: true,
 							nav: false,
 							speed: 500,
@@ -28,50 +29,54 @@
 					});
 				</script>
 				<div  id="top" class="callbacks_container-wrap">
-					<ul class="rslides" id="slider3">
+					
+					<ul class="" id="slider3">
+						
 						<li>
+							<div id="particles"></div>
 							<div class="banner-w3text">
-								<h3>Lorem ipsum dolor consectetur</h3>
-								<h5>molestie elit condi</h5>
-								<p>Sed dignissim augue ut ex cursus, vel molestie elit condimentum mattis nec ipsum. Morbi quis tincidunt urna, eget laoreet felis. Curabitur ut pulvinar dui mattis nec ipsum. Morbi quis tincidunt urna, eget laoreet felis curabitur ut pulvinar dui. Nunc tortor dui, mattis sit amet ultricies sed, feugiat quis odio Ut metus justo.</p>
+								<h3>Algoritmo de Romberg</h3>
+								<h5>Resumen</h5>
+								<p>En análisis numérico, el Método de Romberg genera una matriz triangular cuyos elementos son estimaciones numéricas de la integral definida usando la extrapolación de Richardson de forma reiterada en la regla del trapecio. El método de Romberg evalúa el integrando en puntos equiespaciados del intervalo de integración estudiado. Para que este método funcione, el integrando debe ser suficientemente derivable en el intervalo, aunque se obtienen resultados bastante buenos incluso para integrandos poco derivables. Aunque es posible evaluar el integrando en puntos no equiespaciados, en ese caso otros métodos como la cuadratura gaussiana o la cuadratura de Clenshaw–Curtis son más adecuados.</p>
 								<div class="banner-buttons"> 
-									<div class="banner-button">
-										<a href="single.html">More</a>
-									</div>
 								</div>
 							</div>
 						</li>
 						<li>
+							<div id="particles2"></div>
 							<div class="banner-w3text">
-								<h3>Vel molestie elit condimentum</h3>
-								<h5>molestie elit condi</h5>
-								<p>Morbi quis tinci urna, eget laoreet felis. Sed dignissim augue ut ex cursus, vel molestie elit condimentum mattis nec ipsum. Curabitur ut pulvinar dui mattis nec ipsum. Morbi quis tincidunt urna, eget laoreet felis curabitur ut pulvinar dui. Nunc tortor dui, mattis sit amet ultricies sed, feugiat quis odio Ut metus justo.</p>
+								<h3>Algoritmo de Simpson</h3>
+								<h5>Resumen</h5>
+								<p>El Método de Simpson sustituye a la curva y=f(x)  por una serie de arcos contiguos, cada uno de estos arcos es un arco de parábola de eje vertical. Esto nos lleva a aproximar el área bajo la curva mediante la suma de las áreas bajo cada arco de parábola.
+								</p>
+								<p>El procedimiento es similar al de los Trapecios, con la siguiente condición:</p>
+								<p>El número n de subintervalos debe ser un número par.</p>
+								<p>Esta condición surge del hecho que para definir la ecuación de una parábola se necesitan tres puntos.</p>
+								
 								<div class="banner-buttons"> 
-									<div class="banner-button">
-										<a href="single.html">More</a>
 									</div>
-								</div>
 							</div>
 						</li>
 						<li>
+							<div id="particles3"></div>
 							<div class="banner-w3text">
-								<h3>Curabitur ut pulvinar duicursus</h3>
-								<h5>molestie elit condi</h5>
-								<p>Vel molestie elit sed dignissim augue ut ex cursus, condimentum mattis nec ipsum. Morbi quis tincidunt urna, eget laoreet felis. Curabitur ut pulvinar dui mattis nec ipsum. Morbi quis tincidunt urna, eget laoreet felis curabitur ut pulvinar dui. Nunc tortor dui, mattis sit amet ultricies sed, feugiat quis odio Ut metus justo.</p>
+								<h3>Algoritmo del Trapecio</h3>
+								<h5>Resumen</h5>
+								<p>La regla se basa en aproximar el valor de la integral de f(x) por el de la función lineal que pasa a través de los puntos (a, f(a)) y (b, f(b)). La integral de ésta es igual al área del trapecio bajo la gráfica de la función lineal.</p>
 								<div class="banner-buttons">
-									<div class="banner-button">
-										<a href="single.html">More</a>
-									</div> 
 								</div>
 							</div>
 						</li>
 					</ul>
 				</div>	
 			</div>
+				
+				
 		</div>
 		<!-- //container -->
 	</div>
-	<!-- //banner -->
+	
+
 	{% endblock maincontent %}
 	
 	
@@ -90,3 +95,7 @@
 	</div>
 	<!-- //welcome -->
 	{% endblock bottomtext %}
+	
+	{% block plugins %}
+	<script type="text/javascript" src="{% static 'js/particles.js' %}"></script>
+	{% endblock plugins %}

@@ -414,8 +414,20 @@ input:focus {
 /*--//Login --*/
 /*-- banner --*/
 .banner{
-    background: url(../images/1.jpg) no-repeat center bottom;
+    background: black no-repeat center bottom;
+    background-color: rgba(0,0,0,.8);
     background-size: cover;
+}
+#particles {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    top: 0;                        
+    bottom: 0;
+    left: 0;
+    right: 0;
+    position: absolute;
+    z-index: -2;
 }
 .banner-w3text{
     margin: 13em 0;
@@ -886,7 +898,7 @@ ul#flexiselDemo1 li a h4:hover{
 }
 /*-- news-bottom --*/
 .news-bottom{
-    background: url(../images/1.jpg) no-repeat center fixed;
+    background: #10c7bf no-repeat center fixed;
     padding: 0em 0;
     background-size: cover;
 }
@@ -1174,7 +1186,7 @@ li.list-group-item1 {
 	z-index: 0;
 }
 .badge-primary {
-	background-color: #03a9f4;
+	background-color: #10c7bf;
 }
 .badge-success {
 	background-color: #8bc34a;
@@ -2850,3 +2862,5 @@ button.btn1.btn-1.btn-1b:hover {
 		padding-left: 1.5em;
 	} 
 }
+
+
