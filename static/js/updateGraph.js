@@ -1,5 +1,4 @@
 
-
 // $(document).ready(function (){
 //     $('#btn-graph').on('click', function(e){
 //         e.preventDefault();
@@ -30,6 +29,9 @@
 $(document).ready(function (){
     $('#btn-graph').on('click', function(e){
         e.preventDefault();
+        var btnFirstState = $('#btn-graph').html();
+        $('#btn-graph').html("Raffing");
+        // console.log($('#btn-graph').html());
         var fun = $('#funcion').val();
         var iterations = $('#iterations').val();
         var lowerbound = $('#lowerbound').val();
@@ -38,7 +40,8 @@ $(document).ready(function (){
         $( "#grafica" ).load( '/grafica/'+fun+'/'+iterations+'/'+lowerbound+'/'+upperbound, function( response, status, xhr ) {
             if ( status == "error" ) {
                 var msg = "Sorry but there was an error: ";
-                $( "#error" ).html( msg + xhr.status + " " + xhr.statusText );
+                alert("Un error ha ocurrido, por favor intente de nuevo");
+                // $( "#error" ).html( msg + xhr.status + " " + xhr.statusText );
             }
         });
         console.log('trying to get JSON');
@@ -58,22 +61,8 @@ $(document).ready(function (){
             $('#sAbsError').text(data[2].errorAb);
             $('#rAbsError').text(data[3].errorAb);
         });
-        // var objson = $.getJSON('./calcular/'+fun+'/'+iterations+'/'+lowerbound+'/'+upperbound);
-        // console.log(objson[0]);
-        
-        // console.log(typeof(jsondata));
-        // var obj = JSON.parse(jsondata);
-        
-        // console.log(obj[0].valorReal);
-        // document.getElementById("grafica").innerHTML = '<object type="text/html" data="grafica?fun='+fun+'&iterations='+iterations+'&lowerbound='+lowerbound+'&upperbound='+upperbound+'" width=100% height=550px></object>';
+        setTimeout(function() {   //calls click event after a certain time
+           $('#btn-graph').html(btnFirstState);
+        }, 3500);
     });
 });
-
-
-// <script>
-	// document.getElementById("graph").innerHTML = '<object type="text/html" data="grafica" width=100% height=550px></object>';
-
-	// function load_home() {
-	// 	document.getElementById("graph").innerHTML = '<object type="text/html" data="grafica" width=100% height=550px></object>';
-	// }
-// </script>
