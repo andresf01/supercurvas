@@ -27,21 +27,34 @@
 // });
 
 $(document).ready(function (){
+    paceOptions = {minTime: 100, ghostTime: 100, target: '#btn-graph'};
     $('#btn-graph').on('click', function(e){
+        $( "#error" ).html( "" );
         e.preventDefault();
-        var btnFirstState = $('#btn-graph').html();
-        $('#btn-graph').html("Raffing");
+        // var btnFirstState = $('#btn-graph').html();
         // console.log($('#btn-graph').html());
         var fun = $('#funcion').val();
         var iterations = $('#iterations').val();
         var lowerbound = $('#lowerbound').val();
         var upperbound = $('#upperbound').val();
+        var ok = true;
+        if (isNaN(iterations) || isNaN(lowerbound) || isNaN(upperbound))    
+            ok = false;
+        if (iterations < 0)
+            ok = false;
+        if (lowerbound > upperbound)
+            ok = false;
         // console.log('fun:'+fun+';iterations:'+iterations+';lowerbound:'+lowerbound+';upperbound:'+upperbound);
+        if (ok)
+        {
+        Pace.restart();
+        $('#btn-graph').hide();
+            
         $( "#grafica" ).load( '/grafica/'+fun+'/'+iterations+'/'+lowerbound+'/'+upperbound, function( response, status, xhr ) {
             if ( status == "error" ) {
                 var msg = "Sorry but there was an error: ";
-                alert("Un error ha ocurrido, por favor intente de nuevo");
-                // $( "#error" ).html( msg + xhr.status + " " + xhr.statusText );
+                // alert("Un error ha ocurrido, por favor intente de nuevo");
+                $( "#error" ).html( "<p class='btn-warning'>Por favor verifica los datos ingresados</p>" );
             }
         });
         console.log('trying to get JSON');
@@ -61,8 +74,18 @@ $(document).ready(function (){
             $('#sAbsError').text(data[2].errorAb);
             $('#rAbsError').text(data[3].errorAb);
         });
+        // $('#btn-graph').html(btnFirstState);
+        Pace.stop();
         setTimeout(function() {   //calls click event after a certain time
-           $('#btn-graph').html(btnFirstState);
-        }, 3500);
+          
+        $('#btn-graph').show();
+        //   Pace.stop();
+        //   Pace.restart();
+        }, 1000);
+        }
+        else
+        {
+            $( "#error" ).html( "<p class='btn-warning'>Por favor verifica los datos ingresados</p>" );
+        }
     });
 });

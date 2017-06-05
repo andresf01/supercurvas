@@ -16,7 +16,8 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
-from .views import index,graphic,herramienta,help,theory,tool,particles,calcular
+from .views import index,graphic,herramienta,help,theory,tool,particles,calcular,error
+
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
@@ -28,7 +29,7 @@ urlpatterns = [
     url(r'^ayuda$', help.as_view(), name = "ayuda"),
     url(r'^teoria$', theory.as_view(), name = "teoria"),
     url(r'^particle', particles.as_view(), name = "particle"),
+    url(r'^404', error.as_view(), name = "404"),
+    # url(r'^.*$', error.as_view(), name = "raffo"),
     
-    
-]
-#HELADO
+] 

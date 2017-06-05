@@ -13,12 +13,76 @@
 		<h2 class="text-left">Ayuda</h2>
 		<hr />
 		<p class="text-left">A continuación se muestra una imagen donde se indica cada campo de la herramienta que función cumple y como debe ser utilizada para lograr las representaciones deseada.
-		
-		Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc,
-		
 		</p>
-		<img src="../static/images/ayuda.png" alt="" />
-		
+		<img src="../static/images/ayuda.png" width = 80% height =80% />
+		<table class="table table-hover">
+		  <thead>
+		    <tr>
+		      <th class="text-center">Función</th>
+		      <th class="text-center">Escritura</th>
+		    </tr>
+		  </thead>
+		  <tbody>
+		    <tr>
+		      <td><i>x<sup> y</sup></i></td>
+		      <td>x**y</td>
+		    </tr>
+		    <tr>
+		      <td><i>
+		      <span class="radical"><span class="n-root">2</span>&radic;</span><span class="radicand">x</span>
+		      </i></td>
+		      <td>np.sqrt(x)</td>
+		    </tr>
+		      <td><i>
+		      <span class="radical"><span class="n-root">3</span>&radic;</span><span class="radicand">x</span>
+		      </i></td>
+		      <td>np.cbrt(x)</td>
+		    </tr>
+		    <tr>
+		      <td><i>sen(x)</i></td>
+		      <td>np.sin(x)</td>
+		    </tr>
+		    <tr>
+		      <td><i>cos(x)</i></td>
+		      <td>np.cos(x)</td>
+		    </tr>
+		    <tr>
+		      <td><i>tan(x)</i></td>
+		      <td>np.tan(x)</td>
+		    </tr>
+		      <td><i>sen<sup>-1</sup>(x)</i></td>
+		      <td>np.arcsin(x)</td>
+		    </tr>
+		    <tr>
+		      <td><i>cos<sup>-1</sup>(x)</i></td>
+		      <td>np.arccos(x)</td>
+		    </tr>
+		    <tr>
+		      <td><i>tan<sup>-1</sup>(x)</i></td>
+		      <td>np.arctan(x)</td>
+		    </tr>
+		    <tr>
+		      <td><i>&lfloor;x&rfloor;</i></td>
+		      <td>np.floor(x)</td>
+		    </tr>
+		    <tr>
+		      <td><i>&lceil;x&rceil;</i></td>
+		      <td>np.ceil(x)</td>
+		    </tr>
+		      <td><i>ln(x)</i></td>
+		      <td>np.log(x)</td>
+		    </tr>
+		      <td><i>log(x)</i></td>
+		      <td>np.log10(x)</td>
+		    </tr>
+		      <td><i>log2(x)</i></td>
+		      <td>np.log20(x)</td>
+		    </tr>
+		      <td><i>x módulo y</i></td>
+		      <td>np.mod(x,y)</td>
+		    </tr>
+		  </tbody>
+		</table>
 		<!--<p>Content 1</p>-->
 		<!--<p>Content 1</p>-->
 		<!--<p>Content 1</p>-->
@@ -44,3 +108,7 @@
 	<!--</div>-->
 	<!-- //welcome -->
 	{% endblock bottomtext %}
+	
+	{% block plugins %}
+	<link rel="stylesheet" href="{% static 'css/help.css' %}" type="text/css" />
+	{% endblock plugins %}

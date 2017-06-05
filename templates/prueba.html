@@ -6,14 +6,8 @@
 		<li><a href="./ayuda">Ayuda</a></li>	 
 	{% endblock activemenu %}
 {% block maincontent %}
-<div class="about">
-	<div class="aboutw3-agileinfo">
-		<!-- container -->
-		<div class="container">
-			<h2 class="agileits-title">Curvas</h2>
-		</div>
-		<!-- //container -->
-	</div>
+<div class="">
+	
 	<!-- about-bottom -->
 	<div class="about-bottom">
 		<!-- container -->
@@ -27,21 +21,21 @@
 						<label for="funcion" class="col-sm-2 control-label label-input-sm">Funcion:</label>
 						<h3 class="col-sm-1 control-label">&#x222b;</h3>
 						<div class="col-sm-9">
-							<input type="text" class="form-control1 input-sm" id="funcion" placeholder="Ejemplo: x+1">
+							<input type="text" required class="form-control1 input-sm" id="funcion" placeholder="Ejemplo: x+1">
 						</div>
 					</div>
 					<div class="form-group">
 						<label for="iterations" class="col-sm-2 control-label label-input-sm">No. iteraciones:</label>
 						<div class="col-sm-2">
-							<input type="text" class="form-control1 input-sm" id="iterations" placeholder="Enteros positivos">
+							<input type="text" required class="form-control1 input-sm" id="iterations" placeholder="Enteros positivos">
 						</div>
 						<label for="lowerbound" class="col-sm-2 control-label label-input-sm">Limite inferior:</label>
 						<div class="col-sm-2">
-							<input type="text" class="form-control1 input-sm" id="lowerbound" placeholder="Valor de inicio">
+							<input type="text" required class="form-control1 input-sm" id="lowerbound" placeholder="Valor de inicio">
 						</div>
 						<label for="upperbound" class="col-sm-2 control-label label-input-sm">Limite superior:</label>
 						<div class="col-sm-2">
-							<input type="text" class="form-control1 input-sm" id="upperbound" placeholder="Valor final">
+							<input type="text" required class="form-control1 input-sm" id="upperbound" placeholder="Valor final">
 						</div>
 					</div>
 					<!--<a href="" class="col-sm-2 col-sm-offset-5 btn btn1 btn-1 btn-1b w3-agile centered">Calcular</a>-->
@@ -49,13 +43,21 @@
 				</form>
 			</div>
 		</div>
-			<div class="choose-w3layoutsinfo">
-				<div class="col-md-12 choose-grid">
-					<div class="choose-button col-md-3 col-sm-4" id="topBar"><a class="agile-icon" href="#" id="btn-graph"><i class="fa fa-bar-chart-o"></i>Graficar</a></div>
+			<div class="">
+				<div class="row">
+				<div id="loading" class="col-md-4 col-md-offset-4 choose-grid text-center">
+					<!-- begin #page-loader -->
+					<!-- end #page-loader -->
+					<div id="error"></div>
+					<div class="choose-button col-md-12 col-sm-12" id="topBar"><a class="agile-icon" href="#" id="btn-graph"><i class="fa fa-bar-chart-o"></i>Graficar</a></div>
 					<!--<div id="topBar"> <a href='#' class="choose-button" id="btn-graph" ><i class="fa fa-bar-chart-o"></i> grafica </a> </div>-->
-					<div class="col-sm-12" id="grafica" style="margin: 0 auto;">
-						<object id='target' type="text/html"></object>
-					</div>
+					
+				</div>
+				</div>
+				<div class="row">
+				<div class="col-sm-12 text-center" id="grafica" height="10px">
+					<object id='target' type="text/html"></object>
+				</div>
 				</div>
 				<div id="error"> </div>
 				<div class="clearfix"> </div>
@@ -76,9 +78,9 @@
 						<thead>
 							<tr>
 								<th></th>
-								<th>Metodo del Trapecio</th>
-								<th>Metodo de Simpson</th>
-								<th>Metodo de Romberg</th>
+								<th class="text-center">Metodo del Trapecio</th>
+								<th class="text-center">Metodo de Simpson</th>
+								<th class="text-center">Metodo de Romberg</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -122,4 +124,7 @@
 {% endblock maincontent %} {% block bottomtext %} {% endblock bottomtext %} {% block plugins %}
 
 <script type="text/javascript" src="{% static 'js/updateGraph.js' %}"></script>
+<link href="{% static 'css/loading.css' %}" rel="stylesheet" />
+  <script data-pace-options='{ "ajax": false, "document": false, "startOnPageLoad": false}' src="{% static 'js/pace.min.js' %}"></script>
+<!--<script type="text/javascript" data-pace-options='{ "ajax": false }' src="https://raw.github.com/HubSpot/pace/v1.0.0/pace.min.js"></script>-->
 {% endblock plugins %}

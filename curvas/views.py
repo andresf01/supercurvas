@@ -1,6 +1,8 @@
 from django.shortcuts import render,HttpResponse
 from django.core.urlresolvers import reverse,reverse_lazy
 from django.views.generic import CreateView, TemplateView
+from django.shortcuts import (render_to_response)
+from django.template import RequestContext
 from django.http import JsonResponse
 from scipy import integrate
 import numpy as np
@@ -21,6 +23,8 @@ class tool(TemplateView):
     template_name ='tool.html'
 class particles(TemplateView):
     template_name = 'particles.html'
+class error(TemplateView): 
+    template_name = '404.html'
 
 def graphic(request, fun, iterations, lowerbound, upperbound):
     
